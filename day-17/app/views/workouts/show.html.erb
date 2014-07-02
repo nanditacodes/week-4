@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @workout.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @workout.description %>
+</p>
+
+<p>
+  <strong>Instructor:</strong>
+  <%= @workout.instructor %>
+</p>
+
+<p>
+  <strong>Days:</strong>
+  <%= @workout.days %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= image_tag(@workout.image_url, size: "64x64") %>
+</p>
+
+<%= link_to 'Edit', edit_workout_path(@workout) %> |
+<%= link_to 'Back', workouts_path %>
