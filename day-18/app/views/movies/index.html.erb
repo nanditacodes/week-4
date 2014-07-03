@@ -1,0 +1,55 @@
+
+<section class="panel panel-primary">
+  <div class="panel-heading">Customer's reading list</div>
+
+    <table class="table table-condensed">
+
+      <thead>
+        <tr>
+          <th>Customer Name</th>
+          <th>Movie(s)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @customers.each do |customer|
+          @movies = customer.movies
+        %>
+          <tr>
+            <td><%= customer.name %></td>
+            <td><%= @movies.map(&:name).join(",") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
+<section class="panel panel-success">
+  <div class="panel-heading">Movies have a history too!</div>
+
+    <table class="table table-condensed">
+
+      <thead>
+        <tr>
+          <th>Movie Name</th>
+          <th>Customers(s)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @movie_list.each do |movie|
+          @customer_list = movie.customers
+        %>
+          <tr>
+            <td><%= movie.name %></td>
+            <td><%= @customer_list.map(&:name).join(",") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
